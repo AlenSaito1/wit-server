@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Well",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist",
+    "lint": "eslint \"src/**/*.ts\"",
+    "postinstall": "npm run build",
+    "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
+  },
+  "keywords": [
+    "ai",
+    "ml"
+  ],
+  "author": "Alen Yohannan",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^3.7.0",
+    "@typescript-eslint/parser": "^4.26.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "eslint": "^7.28.0",
+    "prettier": "^2.3.1"
+  }
+}
