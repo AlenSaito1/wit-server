@@ -18,12 +18,11 @@ export default class Server extends EventEmitter {
                 'X-Requested-With',
                 'Content-Type',
                 'Accept',
-                'Authorization',
                 'X-Access-Token',
             ],
             credentials: true,
             methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-            origin: 'http://localhost:3000/',
+            origin: '*',
             preflightContinue: false,
         }))
         this.app.use('/api', this.API.router)

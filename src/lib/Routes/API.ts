@@ -1,4 +1,4 @@
-import { Request, Response, Router, NextFunction, json } from 'express'
+import { Router, json } from 'express'
 import Detector from '../Detector'
 export default class APIRouer {
     private keys: string[] = process.env.KEYS ? process.env.KEYS.split(',') : []
@@ -7,7 +7,6 @@ export default class APIRouer {
 
     constructor(public detector: Detector) {
         this.router.use(json({ limit: 5000000 }))
-        this.router.use(this.authorization)
 
         this.router.get('/detect', async (req, res) => {
             if (!req.query.image)
@@ -35,15 +34,5 @@ export default class APIRouer {
                 })
             return void res.json({ result: detect.result })
         })
-    }
-
-    authorization = (req: Request, res: Response, next: NextFunction): void => {
-        if (typeof req.headers.authorization !== 'string' || !this.keys.includes(req.headers.authorization)) {
-            return void res.status(401).json({
-                status: res.status,
-                error: !req.headers.authorization ? 'No Auth Key Found' : 'Invalid Auth Key'
-            })
-        }
-        next()
     }
 }
