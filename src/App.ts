@@ -19,6 +19,7 @@ export default class App extends EventEmitter {
                 this.emit('server-ready', PORT)
                 this.emit('ready')
             })
+            this.server.load()
         })
         this.detector.load()
         this.server.load()
