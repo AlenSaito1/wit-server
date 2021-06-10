@@ -2,7 +2,7 @@ import EventEmitter from 'events'
 import express from 'express'
 import Detector from './Detector'
 import APIRouer from './Routes/API'
-import cors from 'cors'
+import * as cors from 'cors'
 
 export default class Server extends EventEmitter {
     app = express()
@@ -12,7 +12,7 @@ export default class Server extends EventEmitter {
     constructor(detector: Detector, private PORT: number) {
         super()
         this.API = new APIRouer(detector)
-        this.app.use(cors)
+        this.app.use(cors())
         this.app.use('/api', this.API.router)
     }
 
