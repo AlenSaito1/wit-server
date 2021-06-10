@@ -24,7 +24,7 @@ export default class App extends EventEmitter {
         this.server.load()
     }
 
-    log = (body: string, header = 'APP', error?: boolean): void => {
+    log = (body: string, header = '[APP]', error?: boolean): void => {
         console.log(
             chalk[(!error ? 'green' : 'red')](header),
             chalk.blueBright(Date.now().toString()),
