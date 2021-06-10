@@ -1,3 +1,5 @@
+import { config } from 'dotenv'
+config()
 import chalk from 'chalk'
 import { EventEmitter } from 'events'
 import Detector from './lib/Detector'
