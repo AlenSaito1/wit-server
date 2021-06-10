@@ -4,7 +4,7 @@ import Detector from '../Detector'
 
 export default class APIRouer {
 
-    private keys: string[] = JSON.parse(process.env.KEYS || '[]')
+    private keys: string[] = (process.env.KEYS) ? process.env.KEYS.split(',') : []
 
     router = Router()
 
