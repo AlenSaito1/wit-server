@@ -23,7 +23,7 @@ export default class Server extends EventEmitter {
             ],
             credentials: true,
             methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-            origin: 'http:://http://localhost:3000/',
+            origin: 'http://localhost:3000/',
             'Access-Control-Allow-Origin': '*',
             preflightContinue: false,
         }))
