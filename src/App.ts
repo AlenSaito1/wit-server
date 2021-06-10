@@ -30,7 +30,7 @@ export default class App extends EventEmitter {
     log = (body: string, header = '[APP]', error?: boolean): void => {
         console.log(
             chalk[(!error ? 'green' : 'red')](header),
-            chalk.blueBright(Date.now().toString()),
+            chalk.blueBright(new Date().toString()),
             chalk.yellowBright(body)
         )
     }
