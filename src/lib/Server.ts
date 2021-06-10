@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 import express from 'express'
 import Detector from './Detector'
-import APIRouer from './Routes/api'
+import APIRouer from './Routes/API'
 
 export default class Server extends EventEmitter {
 
