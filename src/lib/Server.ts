@@ -18,6 +18,7 @@ export default class Server extends EventEmitter {
                 'X-Requested-With',
                 'Content-Type',
                 'Accept',
+                'Authorization',
                 'X-Access-Token',
             ],
             credentials: true,
