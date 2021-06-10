@@ -24,7 +24,6 @@ export default class App extends EventEmitter {
             this.server.load()
         })
         this.detector.load()
-        this.server.load()
     }
 
     log = (body: string, header = '[APP]', error?: boolean): void => {

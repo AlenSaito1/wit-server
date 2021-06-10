@@ -27,7 +27,7 @@ export default class APIRouer {
         if (typeof req.headers.authorization !== 'string' || this.keys.includes(req.headers.authorization)) {
             return void res.status(401).json({ 
                 status: res.status,
-                error: (req.headers.authorization) ? 'No Auth Key Found' : 'Invalid Auth Key'
+                error: (!req.headers.authorization) ? 'No Auth Key Found' : 'Invalid Auth Key'
             })
         }
         next()
