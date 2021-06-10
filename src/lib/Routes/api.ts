@@ -24,7 +24,7 @@ export default class APIRouer {
     }
 
     authorization = (req: Request, res: Response, next: NextFunction): void => {
-        if (typeof req.headers.authorization !== 'string' || this.keys.includes(req.headers.authorization)) {
+        if (typeof req.headers.authorization !== 'string' || !this.keys.includes(req.headers.authorization)) {
             return void res.status(401).json({ 
                 status: res.status,
                 error: (!req.headers.authorization) ? 'No Auth Key Found' : 'Invalid Auth Key'
