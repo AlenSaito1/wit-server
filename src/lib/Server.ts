@@ -12,6 +12,7 @@ export default class Server extends EventEmitter {
     constructor(detector: Detector, private PORT: number) {
         super()
         this.API = new APIRouer(detector)
+        this.app.use('/api', this.API.router)
     }
 
     load = async (): Promise<void> => {
