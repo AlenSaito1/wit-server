@@ -9,12 +9,13 @@ export default class Server extends EventEmitter {
 
     API: APIRouer
 
-    constructor(detector: Detector, private PORT = 4000) {
+    constructor(detector: Detector, private PORT: number) {
         super()
         this.API = new APIRouer(detector)
     }
 
     load = async (): Promise<void> => {
+        if (!this.PORT) this.PORT = 4000
         this.app.listen(this.PORT, () => this.emit('ready', this.PORT))
     }
 }
