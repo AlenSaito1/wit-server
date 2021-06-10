@@ -4,7 +4,6 @@ import Detector from './Detector'
 import APIRouer from './Routes/API'
 
 export default class Server extends EventEmitter {
-
     app = express()
 
     API: APIRouer

@@ -11,7 +11,7 @@ export default class App extends EventEmitter {
     }
 
     detector = new Detector()
-    
+
     server = new Server(this.detector, Number(process.env.PORT))
 
     start = async (): Promise<void> => {
@@ -28,7 +28,7 @@ export default class App extends EventEmitter {
 
     log = (body: string, header = '[APP]', error?: boolean): void => {
         console.log(
-            chalk[(!error ? 'green' : 'red')](header),
+            chalk[!error ? 'green' : 'red'](header),
             chalk.blueBright(new Date().toString()),
             chalk.yellowBright(body)
         )
