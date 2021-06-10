@@ -1,6 +1,5 @@
 import { Request, Response, Router, NextFunction, json } from 'express'
 import Detector from '../Detector'
-
 export default class APIRouer {
     private keys: string[] = process.env.KEYS ? process.env.KEYS.split(',') : []
 
